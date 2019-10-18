@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:testone/intro.dart';
+import 'package:testone/test1.dart';
 import 'wierd_alert_dialog.dart' show UnicornAlertDialog;
 import 'package:pin_view/pin_view.dart';
+import 'package:testone/fourthroute.dart';
 
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'Navigation Basics',
+    title: 'Cash BUnch App',
     home: Intro(),
   ));
 }
@@ -19,11 +21,9 @@ class FirstRoute extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Center(
-          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+          child: Column(mainAxisAlignment: MainAxisAlignment.start, children: <
               Widget>[
-            Padding(
-              padding: EdgeInsets.all(10),
-            ),
+            const SizedBox(height: 75.0,),
             Text(
               'Get Started',
               style: TextStyle(fontSize: 25.0),
@@ -39,7 +39,7 @@ class FirstRoute extends StatelessWidget {
               padding: EdgeInsets.all(20),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 0.0),
+              margin: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 0.0),
               alignment: Alignment.topLeft,
               child: Text(
                 'Mobile number',
@@ -47,7 +47,7 @@ class FirstRoute extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(30, 5, 30, 20),
+              margin: EdgeInsets.fromLTRB(30, 0, 30, 20),
               child: TextFormField(
                 decoration: new InputDecoration(
                   counterText: "",
@@ -133,7 +133,7 @@ class FirstRoute extends StatelessWidget {
                 new GestureDetector(
                   onTap: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SecondRoute()));
+                        MaterialPageRoute(builder: (context) => test1()));
                   },
                   child: Text(
                     'Skip Login ?',
@@ -157,11 +157,12 @@ class SecondRoute extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(10),
+              const SizedBox(
+                height: 75.0,
               ),
+              
               Text(
                 'Enter OTP',
                 style: TextStyle(fontSize: 25.0),
@@ -355,19 +356,18 @@ class ThirdRoute extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
-            child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
+            child: Center(
+                child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(0),
-            ),
+            const SizedBox(height: 75.0,),
             Text(
               'Personal details',
               style: TextStyle(fontSize: 25.0),
             ),
-            const SizedBox(height: 30.0),
+            const SizedBox(height: 20.0),
             Container(
-              margin: EdgeInsets.fromLTRB(30.0, 20.0, 30.0, 0.0),
+              margin: EdgeInsets.fromLTRB(30.0, 10.0, 30.0, 0.0),
               alignment: Alignment.topLeft,
               child: Text(
                 'Name',
@@ -375,7 +375,7 @@ class ThirdRoute extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(30, 5, 30, 20),
+              margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
               child: TextFormField(
                 decoration: new InputDecoration(
                   counterText: "",
@@ -396,7 +396,7 @@ class ThirdRoute extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(30, 5, 30, 20),
+              margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
               child: TextFormField(
                 decoration: new InputDecoration(
                   counterText: "",
@@ -416,7 +416,7 @@ class ThirdRoute extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(30, 5, 30, 20),
+              margin: EdgeInsets.fromLTRB(30, 0, 30, 10),
               child: TextFormField(
                 decoration: new InputDecoration(
                   counterText: "",
@@ -425,6 +425,7 @@ class ThirdRoute extends StatelessWidget {
                   ),
                 ),
                 keyboardType: TextInputType.emailAddress,
+              
               ),
             ),
             const SizedBox(height: 40.0),
@@ -434,7 +435,7 @@ class ThirdRoute extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => FourthRoute()),
                 );
               },
               textColor: Colors.white,
@@ -459,6 +460,6 @@ class ThirdRoute extends StatelessWidget {
               ),
             ),
           ],
-        )));
+        ))));
   }
 }
