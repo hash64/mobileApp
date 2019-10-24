@@ -11,19 +11,13 @@ class test1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: MyHomePage(title: 'Flutter Sample'),
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -66,9 +60,7 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title.toUpperCase()),
-      ),
+      
       body: TabBarView(
         controller: _tabController,
         children: _tabList,
@@ -87,23 +79,23 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
         items: [
           BottomNavigationBarItem(
             title: Text("Home"),
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home,color: Colors.grey,),
             
             // activeIcon: Intro(),
           ),
           BottomNavigationBarItem(
             title: Text("Deals"),
-            icon: Icon(Icons.business_center),
+            icon: Icon(Icons.business_center,color: Colors.grey,),
             // activeIcon: Profile(),
           ),
           BottomNavigationBarItem(
             title: Text("Favourites"),
-            icon: Icon(Icons.favorite_border),
+            icon: Icon(Icons.favorite_border,color: Colors.grey,),
             // activeIcon: Deals(),
           ),
           BottomNavigationBarItem(
             title: Text("Profile"),
-            icon: Icon(Icons.portrait),
+            icon: Icon(Icons.portrait,color: Colors.grey,),
           )
         ],
       ),
